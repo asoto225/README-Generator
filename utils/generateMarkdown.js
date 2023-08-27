@@ -26,7 +26,7 @@ function renderLicenseSection(license) {
   let licenseSection = '';
 
   if(license !== 'none'){
-    licenseSection += 'Please view License at ' + renderLicenseLink(license) + 'for more information.\n'
+    licenseSection += 'Please view License at ' + renderLicenseLink(license) + ' for more information.\n'
   }
 
   return licenseSection;
