@@ -38,49 +38,49 @@ function generateMarkdown(data) {
   const units = ['Description', 'Installation', 'Usage', 'Contributing', 'Tests', 'License', 'Questions'];
 
   // add title
-  let markdown = '# ' + data.title + '\n';
+  let readMeInput = '# ' + data.title + '\n';
 
   // add license badge
-  markdown += renderLicenseBadge(data.license) + '\n';
+  readMeInput += renderLicenseBadge(data.license) + '\n';
 
   // add table of contents
-  markdown += '## Table of Contents\n';
+  readMeInput += '## Table of Contents\n';
   for (let i=0; i<units.length; i++) {
     if (! (units[i] === "License" && data.license === 'none')) {
-      markdown += i+1 + ". [" + units[i] + "](#" + units[i][0].toLowerCase() + units[i].substring(1) + ")\n";
+      readMeInput += i+1 + ". [" + units[i] + "](#" + units[i][0].toLowerCase() + units[i].substring(1) + ")\n";
     }
   }
 
   // add description
-  markdown += "## " + units[0] + "\n";
-  markdown += data.description + "\n";
+  readMeInput += "## " + units[0] + "\n";
+  readMeInput += data.description + "\n";
 
   // add installation
-  markdown += "## " + units[1] + "\n";
-  markdown += data.installation + "\n";
+  readMeInput += "## " + units[1] + "\n";
+  readMeInput += data.installation + "\n";
 
   // add usage
-  markdown += "## " + units[2] + "\n";
-  markdown += data.usage + "\n";
+  readMeInput += "## " + units[2] + "\n";
+  readMeInput += data.usage + "\n";
 
   // add contributing
-  markdown += "## " + units[3] + "\n";
-  markdown += data.contributions + "\n";
+  readMeInput += "## " + units[3] + "\n";
+  readMeInput += data.contributions + "\n";
 
   // add tests
-  markdown += "## " + units[4] + "\n";
-  markdown += data.tests + "\n";
+  readMeInput += "## " + units[4] + "\n";
+  readMeInput += data.tests + "\n";
 
   // add license
-  markdown += '## ' + units[5] + '\n';
-  markdown += renderLicenseSection(data.license) + "\n";
+  readMeInput += '## ' + units[5] + '\n';
+  readMeInput += renderLicenseSection(data.license) + "\n";
 
   // add questions
-  markdown += "## " + units[6] + "\n";
-  markdown += "You can find me [HERE](https://github.com/" + data.username + ") on Github\n";
-  markdown += "You can email me at " + data.email + " if you have any additional questions.\n"
+  readMeInput += "## " + units[6] + "\n";
+  readMeInput += "You can find me [HERE](https://github.com/" + data.username + ") on Github.\n";
+  readMeInput += "You can email me at " + data.email + " if you have any additional questions.\n"
 
-  return markdown;
+  return readMeInput;
 }
 
 module.exports = generateMarkdown;
